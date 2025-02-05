@@ -44,9 +44,13 @@ app.use((req, res, next) => {
   app.use(express.static(__dirname + "/public"))
 
   app.get("/", (request, response) =>{
-   
+   response.render("index.html")
   })
 
 app.get("/overview", (request, response) =>{
-
+response.status(200).send("Please wait for me to finish!")
 })
+
+app.listen(3000, () => {
+    console.log("Server running")
+  })
