@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Bliss</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1>Cookie Bliss</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="overview.ejs">Cookies</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="home">
+        <h2>Welcome to Cookie Bliss!</h2>
+        <p>Your go-to place for the sweetest cookie recipes and baking tips.</p>
+        <img src="cookie-banner.jpg" alt="Cute cookies">
+    </section>
+
+    <section id="featured">
+        <h2>Recipes</h2>
+        <div class="recipe-grid">
+
+            <% for(let i = 0; i < cookies.length; i++) { %>
+            <div class="recipe">
+                <img src="<%= cookies[i].image %>" alt="image">
+                <h3><%= cookies[i].name %></h3>
+                <h3><%= cookies[i].origin %></h3>
+                <a href="/cookies/<%= i %>" class="learn-more-btn">Get Recipe</a>
+
+            </div>
+        <% } %>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Cookie Bliss. All rights reserved.</p>
+    </footer>
+</body>
+</html>
